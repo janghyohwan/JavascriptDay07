@@ -130,20 +130,20 @@
 
 calculator = {
   history: [],
-  uploding: function () {
-    history.push();
-  },
   result: 0,
   add: function (x) {
     this.result = this.result + x;
+    this.history.push(this.result);
     console.log(`${this.result}`);
   },
   minus: function (x) {
     this.result = this.result - x;
+    this.history.push(this.result);
     console.log(`${this.result}`);
   },
   multiply: function (x) {
     this.result = this.result * x;
+    this.history.push(this.result);
     console.log(`${this.result}`);
   },
   divide: function (x) {
@@ -151,15 +151,17 @@ calculator = {
       console.log(`에러~`);
     } else {
       this.result = this.result / x;
+      this.history.push(this.result);
       console.log(`${this.result}`);
     }
   },
   square: function (x) {
     this.result = this.result ** x;
+    this.history.push(this.result);
     console.log(`${this.result}`);
   },
   clear: function (x) {
-    this.result == 0;
+    this.result = 0;
     console.log(`${this.result}`);
   },
   showHistory: function () {
